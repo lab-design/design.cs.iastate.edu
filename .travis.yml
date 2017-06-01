@@ -2,10 +2,31 @@ language: ruby
 rvm:
 - 2.2.5
 
+before_install:
+  - sudo apt-get install openconnect
+  - sudo apt-get install sshpass
+
 script: ./_scripts/cibuild
 
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true  # Speeds up installation of html-proofer
+  - secure: "DeILgpNCVTpKyOxN+dFYWmIZfzKjg4Z9Np3wKq3JhH//sFFFxpDkn8lcJwBjiCY8/Ae4Oc7+bjXPhwql4UkmEQWhDY2RoLWthv5rM+Y6YOmGgbtwFf5o7yhYsKNooVPfeL+Yuq2HwQkisLUuq5gzi0pPc57kkKcNYkKpjw/O72FFcgbACjHVV0wWl/PBUwvp158maQrjscrq4TiW2ssFWEfxKT74LkrJgRq7xxBs5A68k1xg7d1nUWuN6qjpLY7kZHuMmMXXBnHDhK+TbxFbrnyl+lu0/D2qDilEhwdT0ATw7OBSHAN0RveLXbd+AmQAmkZAqWRCZgOnHwqXkGojiC/l/TTR8++ROh7D9vBGL+4HwazDOcUTx2HJZWdTIbX/09xYkXv14ycgR2isfVRtw+TM4Lm3uXtuyifdW/r4oGwfbLFP5zBtf+ydPoBk5SGxaxTUqBrhtwLjYBSmSzGBhtQDNTxfuGGfOatCS6nBZ2m8jPluk1cfliolemwGO33+Kt+21RzgLWZoaeP6TP8Utk5bRidKOGY7+JIDTbBGh9ypBBbn6hgmWw3AKhb3An3fWIJ8PSzoHfniG+Lats4nDcEpF5GbK+896ZKqi7PdGhLkqcCaeF55CWyOlv4t6w8QfaJJ/Jpg+OUW0En/+iHGwUhoW8hP79E7zp5q4dh7Iok="
+  - secure: "eVKnL7Du5hUYeY7s30hJ0r2+tS4y+GsXGPWQQT3ITvIMEoTi4ctXntR5Rih5rdxW+TI6yVVM3GCtYgSb+Z5WpmcT+OJ+zNtWREYJhrqW12J+JjrfIAzj18X1zV+wItRYi9XSk02gGwj6Vaill0ln0gOfHg9BJljO5yLaQIbazLIOltb1tBOl5jSCkNa4Y+6SQ419Nu2La5LLGxRvcmx46G7l+rT0oM5BzcFuCj8GYLE3/MFJ6G1DxkK3U8s9w4f7zITtQwxIVRLcbj03dVMK6miFfUyrgvrg27U/ZXFFbEdCPnGemGP6tKIuAu5QTVsH81VQ5jRPJGHbAKdgrN+52SumNqBH7dAK3xdRELH7s7MEC3D0P292NZ0eqs15oTP5aPK28MU1OZYX3KphhvYXpwAUlQtj605MUlEbn6Nfb6q/IRqMMRE8euONYxT1q9dfbu3kjAvYoCTmjda2KzDayn0aRsRNpnWgmGAC+soy18r4TSu7j29MD9AbokBW/8+zZRtpyaG4bDJo/ill+qABvGu0zKVhlI1x9LWx/DhFNyqEUruvfYdAzl0tGIs77b09olr9TWAnEMmtQxqbyF+KC7nqWDpRmv2APT1I+iIKSNLXNiVVzz805XeHfvgOl0Rb5QEHj6edqZPB0p9LzQ0cSy1zD2UWZzqBxHVeg6K9/yw="
+  - local_src="_site/"
+  - remote_host="pyrite.cs.iastate.edu"
+  - remote_dest="/auto/web-home/other/design/WWW/"
 
 sudo: false  # Use container-based infrastructure for a faster build.
+
+# -e in sshpass reads password from SSHPASS env variable
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - echo $PASS | openconnect $USER@pyrite.cs.iastate.edu --passwd-on-stdin --user $USER --group SSLvpn
+    - rsync --perms --chmod=ug+rw,Dug+x,Fug-x,o-rwx --recursive --delete --progress \
+          -e 'echo $PASS | sshpass -d 1' \
+          "$local_src" "$USER@$remote_host:$remote_dest"
+  on:
+    branch: feature/travisCI

@@ -20,5 +20,6 @@ fi
 
 
 # This is meant to be invoked from the root of the repository.
-rsync --recursive --delete --progress \
-      ${local_src} "${remote_user}@${remote_host}:${remote_dest}"
+# Sets permissions to 770 for directories and 660 for files
+rsync --perms --chmod=ug+rw,Dug+x,Fug-x,o-rwx --recursive --delete --progress \
+      "${local_src}" "${remote_user}@${remote_host}:${remote_dest}"
