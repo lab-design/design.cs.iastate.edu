@@ -17,7 +17,7 @@ env:
   - remote_host="pyrite.cs.iastate.edu"
   - remote_dest="/auto/web-home/other/design/WWW/"
 
-sudo: false  # Use container-based infrastructure for a faster build.
+sudo: required  # Use container-based infrastructure for a faster build.
 
 # -e in sshpass reads password from SSHPASS env variable
 deploy:
