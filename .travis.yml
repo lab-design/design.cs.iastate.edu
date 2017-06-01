@@ -15,7 +15,7 @@ env:
   - secure: "eVKnL7Du5hUYeY7s30hJ0r2+tS4y+GsXGPWQQT3ITvIMEoTi4ctXntR5Rih5rdxW+TI6yVVM3GCtYgSb+Z5WpmcT+OJ+zNtWREYJhrqW12J+JjrfIAzj18X1zV+wItRYi9XSk02gGwj6Vaill0ln0gOfHg9BJljO5yLaQIbazLIOltb1tBOl5jSCkNa4Y+6SQ419Nu2La5LLGxRvcmx46G7l+rT0oM5BzcFuCj8GYLE3/MFJ6G1DxkK3U8s9w4f7zITtQwxIVRLcbj03dVMK6miFfUyrgvrg27U/ZXFFbEdCPnGemGP6tKIuAu5QTVsH81VQ5jRPJGHbAKdgrN+52SumNqBH7dAK3xdRELH7s7MEC3D0P292NZ0eqs15oTP5aPK28MU1OZYX3KphhvYXpwAUlQtj605MUlEbn6Nfb6q/IRqMMRE8euONYxT1q9dfbu3kjAvYoCTmjda2KzDayn0aRsRNpnWgmGAC+soy18r4TSu7j29MD9AbokBW/8+zZRtpyaG4bDJo/ill+qABvGu0zKVhlI1x9LWx/DhFNyqEUruvfYdAzl0tGIs77b09olr9TWAnEMmtQxqbyF+KC7nqWDpRmv2APT1I+iIKSNLXNiVVzz805XeHfvgOl0Rb5QEHj6edqZPB0p9LzQ0cSy1zD2UWZzqBxHVeg6K9/yw="
   - local_src="_site/"
   - remote_host="pyrite.cs.iastate.edu"
-  - remote_dest="/auto/web-home/other/design/WWW/"
+  - remote_dest="/home/natew/TRAVIS_TESTS"
 
 sudo: required  # Use container-based infrastructure for a faster build.
 
