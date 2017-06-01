@@ -23,6 +23,6 @@ sudo: required  # Use container-based infrastructure for a faster build.
 deploy:
   provider: script
   skip_cleanup: true
-  script: automatically.sh
+  script: ./_scripts/deploy/automatically.sh
   on:
     branch: feature/travisCI
