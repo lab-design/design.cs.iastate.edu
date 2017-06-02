@@ -1,7 +1,6 @@
 language: ruby
 rvm:
 - 2.2.5
-dist: trusty
 before_install:
   - sudo apt-get install -y openconnect
   - sudo apt-get install -y sshpass
