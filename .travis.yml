@@ -17,9 +17,8 @@ env:
   - remote_host="pyrite.cs.iastate.edu"
   - remote_dest="/home/natew/TRAVIS_TESTS"
 
-sudo: required  # Use container-based infrastructure for a faster build.
+sudo: required  # Needed for continuous deployment
 
-# -e in sshpass reads password from SSHPASS env variable
 deploy:
   provider: script
   skip_cleanup: true
