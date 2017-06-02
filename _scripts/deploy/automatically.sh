@@ -7,5 +7,4 @@ rsync --version
 export SSHPASS="$PASS"
 
 rsync -vvv --recursive --delete --progress \
-      -e 'sshpass -e ssh' \
       "$local_src" "$USER@$remote_host:$remote_dest"
