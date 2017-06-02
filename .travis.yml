@@ -12,7 +12,7 @@ env:
   - USER=natew
   - local_src="_site/"
   - remote_host="pyrite.cs.iastate.edu"
-  - remote_dest="/home/natew/TRAVIS_TESTS"
+  - remote_dest="/home/natew/TRAVIS_TESTS/"
   - secure: QZy1IYwUB0pAxefvhqpF1poC6zua9DkygpSZkXJqGz7CqnMq0BPZGDV4qixC0dwNKxG4eRUaCsWwI6Cghb+uXUwlrOgmWsN4BLHlzQj4+H1WheZToTaxdqCb9En7+a/YVkMIqh6FlJWdqKox9pVmDRGgxOyYfWINeA8r566iSTTWkIWDajFwyD05Y2IPAK0xU9BguFV+Z9EwQukzOL3ZkGXOI+qfcIX/zweOEntPz8pU6WR0oaTw/JpwCz18HvuKLYDbK8Ri4v7EBtTgjaskdhhzUo18H9nDbob7peEEtwS1LgERxp3FXrg5v9Z6MQz5GH+lpVP5BCFm0KitBrRz/+2FEoGP4yYE7zLcRnl2D33EhiElTtJ+m20v2KUf1+agpeM0vtDAqJzTjxhnyKC1k1baMHIoNF9FtT/p6I8dgfXCvjie9hBh9OLHSzPOQ85W5dRMrfWfss3zBLgAzhCMdbKGqtKcTLfAcGuPd4VFgZFcGE1wbQLJzLMqp0Ymr8IYn2Pr9NHs0deqTv7xbqfpDPGLozaZBr38E5Yd0pPQTylWfzhqlEOY7kXC4zgQIgAeLuPj1Bg0f9T6O1IBoGyQqV6f0J4NeGrokb+McM0uNEtLWk+sFu0pcdI/LeJamYm42H+Pw5uofqeCMA7+htcuQfmiOLhrnSDFGVesPfpK7H8=
 sudo: required
 deploy:
