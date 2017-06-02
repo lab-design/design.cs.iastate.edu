@@ -4,6 +4,6 @@ echo Finished trying to connect to vpn
 
 export SSHPASS="$PASS"
 
-rsync -vvv --perms --chmod=ug+rw,Dug+x,Fug-x,o-rwx --recursive --delete --progress \
-      -e 'sshpass -e ssh' \
+rsync -vvv \
+      -e 'sshpass -e ssh -q' \
       "$local_src" "$USER@$remote_host:$remote_dest"
