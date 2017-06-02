@@ -4,5 +4,5 @@ rsync --version
 
 export SSHPASS="$PASS"
 
-rsync -W-vvv --recursive --delete --progress \
+rsync -W -vvv --recursive --delete --progress \
       "$local_src" "$USER@$remote_host:$remote_dest"
