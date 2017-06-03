@@ -1,4 +1,6 @@
 #!/bin/sh
+# http://git.infradead.org/users/dwmw2/vpnc-scripts.git/blob_plain/HEAD:/vpnc-script
+# Configures routing of vpn for automatic deployment
 #
 # Originally part of vpnc source code:
 # Â© 2005-2012 Maurice Massar, JÃ¶rg Mayer, Antonio Borneo et al.
