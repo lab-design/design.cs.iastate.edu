@@ -1,6 +1,6 @@
 echo Beginning openconnect
 
-echo $PASS | sudo openconnect vpn.iastate.edu --verbose -b --script=_scripts/vpnc-script.sh --passwd-on-stdin --user $USER --authgroup SSLvpn
+echo $PASS | sudo openconnect vpn.iastate.edu --verbose --background --passwd-on-stdin --user $USER --authgroup SSLvpn
 
 rsync --version
 
