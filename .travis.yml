@@ -3,7 +3,7 @@ rvm:
 - 2.2.5
 before_install:
   - sudo apt-get install -y vpnc
-  - sudo apt-get install -y network-manager-openconnect
+  - sudo apt-get install -y openconnect
   - sudo apt-get install -y sshpass
 script: ./_scripts/cibuild
 env:
