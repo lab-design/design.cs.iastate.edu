@@ -214,8 +214,12 @@ footer {
   vertical-align: top;
 }
 
-footer .isu-logo {
+footer .isu-stacked-logo {
   width: 170px;
+}
+
+footer .isu-logo-wrapper:hover path {
+  fill: #FDBE57;
 }
 
 footer .isu-logo-wrapper {
@@ -226,6 +230,9 @@ footer .project-logos {
   text-align: left;
   padding: 0 30px;
   margin: 0;
+  svg {
+    vertical-align: middle;
+  }
 }
 
 @media screen and (max-width:543px){
