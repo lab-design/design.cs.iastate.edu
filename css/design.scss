@@ -136,6 +136,10 @@ nav .navbar {
   list-style-type: disc;
 }
 
+#papers-markdown-toc ol > li > ol {
+  padding-left: 20px;
+}
+
 #papers-markdown-toc ol > li {
   list-style-type: none;
 }
@@ -147,7 +151,7 @@ nav .navbar {
   padding: 0.2rem 0.2rem 0.2rem 0.2rem;
 }
 
-.paper_card_header > a > img {
+.paper_card_header > a > svg {
   height: 1.4rem;
   margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
@@ -219,7 +223,7 @@ footer .isu-stacked-logo {
 }
 
 footer .isu-logo-wrapper:hover path {
-  fill: #FDBE57;
+  fill: #333;
 }
 
 footer .isu-logo-wrapper {
@@ -278,7 +282,7 @@ footer .logo {
   width: 42px;
 }
 
-footer .logo:hover {
+footer .boa-logo:hover {
   -webkit-animation: spin 2s linear;
   animation: spin 2s linear;
   -webkit-animation-iteration-count: infinite;
